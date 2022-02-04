@@ -1,0 +1,44 @@
+
+#include <iostream>
+
+
+#include <iostream>
+#include <ctime>
+#include <iomanip>
+using namespace std;
+
+int main(int argc, char* argv[])
+{
+    int row, cols;
+    cout << "Pass row - ";
+    cin >> row;
+    cout << "Pass cols - ";
+    cin >> cols;
+    if (row, cols < 3) {
+        cout << "Error";
+        exit(3);
+    }
+    cout << "Input matrix A \n";                        // динамическое создание двумерного массива вещественных чисел на десять элементов
+    int** ptrarray = new int* [cols + 1];                                               // две строки в массиве
+    for (int count = 0; count < cols; count++)
+        ptrarray[count] = new int[row+1];                                                 // и пять столбцов                                                                                   // заполнение массива
+    for (int count_row = 0; count_row < row; count_row++)
+        for (int count_column = 0; count_column < cols; count_column++)
+              cin >> ptrarray[count_row][count_column];
+    
+    
+    
+    
+    
+    
+    // вывод массива
+    for (int count_row = 0; count_row < row; count_row++)
+    {
+        for (int count_column = 0; count_column < cols; count_column++)
+            cout << setw(4) << setprecision(2) << ptrarray[count_row][count_column] << "   ";
+        cout << endl;
+    }
+    system("pause");
+    return 0;
+}
+	
